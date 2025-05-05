@@ -28,8 +28,8 @@ ZenTasks is a minimalist task management backend API built with Spring Boot, Spr
 
 ```bash
 # Clone the project
-git clone https://github.com/your-username/zentasks-backend.git
-cd zentasks-backend
+git clone https://github.com/Snehith529/zentasks
+cd backend
 
 # Build the project
 mvn clean install
