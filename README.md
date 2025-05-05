@@ -139,9 +139,6 @@ Created by **Snehith Kongara**
 GitHub: [@Snehith529](https://github.com/Snehith529)
 
 
-```
 
----
 
-Would you like this version converted into a downloadable `README.md` file or want help uploading it to GitHub now?
 ```
