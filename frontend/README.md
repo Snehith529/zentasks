@@ -24,7 +24,7 @@ ZenTasks is a minimalist task management web app built with React.js and Tailwin
 ### 📦 Install and Run
 
 ```bash
-git clone https://github.com/your-username/zentasks-frontend.git
-cd zentasks-frontend
+git clone https://github.com/Snehith529/zentasks
+cd frontend
 npm install
 npm start
