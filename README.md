@@ -1,3 +1,4 @@
+---
 
 # 🧠 ZenTasks – Full Stack Task Management App
 
@@ -14,6 +15,7 @@ ZenTasks is a minimalist, secure, and scalable task management application built
 | Auth       | JWT-based authentication       |
 | DB         | H2 (In-Memory, dev)            |
 | Test       | JUnit 5, Mockito               |
+| DevOps     | Docker, Docker Compose         |
 
 ---
 
@@ -25,54 +27,52 @@ git clone https://github.com/Snehith529/zentasks
 cd zentasks/backend
 mvn clean install
 mvn spring-boot:run
-````
+```
 
-> App runs on: [http://localhost:8080](http://localhost:8080)
+> Runs on: [http://localhost:8081](http://localhost:8081)
+
+### 🐳 Backend via Docker
+```bash
+cd zentasks
+docker-compose up --build
+```
 
 ---
 
 ### 💻 Frontend Setup (React)
-
 ```bash
 cd zentasks/frontend
 npm install
 npm start
 ```
 
-> App runs on: [http://localhost:3000](http://localhost:3000)
+> Runs on: [http://localhost:3000](http://localhost:3000)
+
+### 🐳 Frontend via Docker
+> Already handled by `docker-compose.yml`. Open browser at `http://localhost:3000`
 
 ---
 
 ## 🔐 Authentication Flow
 
 ### ✅ Register User
-
 ```bash
-curl -X POST http://localhost:8080/api/auth/register ^
-  -H "Content-Type: application/json" ^
-  -H "Accept: application/json" ^
-  -d "{\"name\":\"John Doe\", \"email\":\"john@example.com\", \"password\":\"mypassword\"}"
+curl -X POST http://localhost:8081/api/auth/register -H "Content-Type: application/json" -d "{\"name\":\"John Doe\", \"email\":\"john@example.com\", \"password\":\"mypassword\"}"
 ```
 
 ### ✅ Login User
-
 ```bash
-curl -X POST http://localhost:8080/api/auth/login ^
-  -H "Content-Type: application/json" ^
-  -H "Accept: application/json" ^
-  -d "{\"email\":\"john@example.com\", \"password\":\"mypassword\"}"
+curl -X POST http://localhost:8081/api/auth/login -H "Content-Type: application/json" -d "{\"email\":\"john@example.com\", \"password\":\"mypassword\"}"
 ```
 
 ### ✅ Sample Response (Login)
-
 ```json
 {
   "token": "eyJhbGciOiJIUzI1NiJ9..."
 }
 ```
 
-Save this token and include it in all subsequent requests using:
-
+Use this JWT token for authenticated requests with:
 ```http
 Authorization: Bearer <token>
 ```
@@ -105,7 +105,7 @@ zentasks/
 ## 🧪 API Reference
 
 | Endpoint               | Method | Description            |
-| ---------------------- | ------ | ---------------------- |
+|------------------------|--------|------------------------|
 | `/api/auth/register`   | POST   | Register new user      |
 | `/api/auth/login`      | POST   | Login & receive JWT    |
 | `/api/tasks/user/{id}` | GET    | Fetch tasks for a user |
@@ -114,9 +114,6 @@ zentasks/
 ---
 
 ## 🛠 Default Test User
-
-Use this if you skip manual registration:
-
 ```bash
 Email: test@example.com
 Password: password123
@@ -125,7 +122,6 @@ Password: password123
 ---
 
 ## ✅ Testing the Backend
-
 ```bash
 cd backend
 mvn test
@@ -134,9 +130,7 @@ mvn test
 ---
 
 ## 👨‍💻 Author
-
-Created by **Snehith Kongara**
+Created by **Snehith Kongara**  
 GitHub: [@Snehith529](https://github.com/Snehith529)
 
-
-
+---
