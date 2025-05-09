@@ -1,10 +1,10 @@
+# 📦 ZenTasks Backend – Spring Boot
 
 ZenTasks is a minimalist task management backend API built with Spring Boot, Spring Security, JPA, and JWT-based authentication.
 
 ---
 
 ## 📦 Features
-
 - REST APIs for Users, Tasks, Tags
 - JWT-based Authentication (`/login`, `/register`)
 - Spring Security with role-based setup
@@ -18,21 +18,23 @@ ZenTasks is a minimalist task management backend API built with Spring Boot, Spr
 ## 🚀 Getting Started
 
 ### ✅ Prerequisites
-
 - Java 21
 - Maven
-- IDE (Eclipse)
-- Postman or Curl (for testing)
+- IDE (e.g., Eclipse/IntelliJ)
+- Postman or Curl (for API testing)
 
 ### ⚙️ Run the App
-
 ```bash
-# Clone the project
-git clone https://github.com/Snehith529/zentasks
 cd backend
-
-# Build the project
 mvn clean install
-
-# Run the application
 mvn spring-boot:run
+```
+
+### 🐳 Run via Docker
+```bash
+docker-compose up --build
+```
+
+> API at: [http://localhost:8081/api](http://localhost:8081/api)
+
+---
